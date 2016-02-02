@@ -1,5 +1,5 @@
 /*!
- * Vue.js v1.0.16
+ * Vue.js v1.0.16-patched-2
  * (c) 2016 Evan You
  * Released under the MIT License.
  */
@@ -1189,7 +1189,9 @@
    */
 
   function remove(el) {
-    el.parentNode.removeChild(el);
+    if (el.parentNode) {
+      el.parentNode.removeChild(el);
+    }
   }
 
   /**
@@ -9557,7 +9559,7 @@
     partial: partial
   };
 
-  Vue.version = '1.0.16';
+  Vue.version = '1.0.16-patched-2';
 
   /**
    * Vue and every constructor that extends Vue has an
